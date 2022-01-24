@@ -129,3 +129,4 @@ function scan(as, msg, param, value) {
 function raiseAlert(as, msg, param, attack, evidence) {
 	as.raiseAlert(3, 3,'---- WALK AROUND : SQLi ----', evidence ,msg.getRequestHeader().getURI().toString(), param, attack, '', '', evidence, 0, 0, msg)
 }
+}
