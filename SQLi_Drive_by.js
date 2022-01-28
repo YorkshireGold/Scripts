@@ -1,5 +1,5 @@
 /*
- This script is to find SQLi based on error messages in responses are sending a malicious attack string in a parameter.
+ This script is to find SQLi based on error messages in responses by sending a malicious attack string in parameters.
  The script is to be used in ActiveScan mode as you "drive by"
  */
 
