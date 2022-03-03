@@ -1,6 +1,13 @@
 
 require 'json'
 
+=begin
+BG: I had some issues with dependency check recently, so I wrote a parser for trivy's output.  you can use it as follows:
+$ trivy fs -f json -o trivy.json . 
+$ ruby parse_trivy_json.rb trivy.json
+
+=end
+
 parsed = JSON.parse(IO.readlines(ARGV[0]).join(''))
 official_cves_only = !ARGV[1].nil?
 omit_from = !ARGV[2].nil?
