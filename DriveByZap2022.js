@@ -52,8 +52,12 @@ function replaceTokensInPayloads(payload_in, param_in, msg_in) {
 		intRandom = Math.floor((Math.random() * 9999) + 1);
 		attack1 = payload_in.replace("INT",intRandom);
 		attack1 = attack1.replace("PARAM",param_in);
-		attack1 = attack1.replace("RRRRR",msg_in.getRequestHeader().getURI().getEscapedPath().toString());
-
+		if (attack1 == null){
+			'pass' 
+		} 
+			else{
+			attack1 = attack1.replace("RRRRR",msg_in.getRequestHeader().getURI().getEscapedPath().toString());
+		}
 		return attack1;
 }
 
@@ -83,7 +87,7 @@ function scan(as, msg, param, value) {
 	                parsed_json = JSON.parse(value);
 	                print(parsed_json);
                      
-                     for(const key in parsed_json) {
+                     for(var key in parsed_json) {
                            attack2 = replaceTokensInPayloads(payloads[i],  param + "." + key, msg);
 				       parsed_json[key] = attack2;
 					  newValue = JSON.stringify(parsed_json);
