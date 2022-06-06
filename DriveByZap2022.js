@@ -53,7 +53,7 @@ function replaceTokensInPayloads(payload_in, param_in, msg_in) {
 		attack1 = payload_in.replace("INT",intRandom);
 		attack1 = attack1.replace("PARAM",param_in);
 		if (attack1 == null){
-			'pass' 
+			attack1 = " " 
 		} 
 			else{
 			attack1 = attack1.replace("RRRRR",msg_in.getRequestHeader().getURI().getEscapedPath().toString());
